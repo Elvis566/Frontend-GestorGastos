@@ -1,0 +1,63 @@
+<!-- 
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Bienvenido</h2>
+      <p>Inicia sesión para continuar</p>
+      <form>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="correo@ejemplo.com" />
+  
+        <label for="password">Contraseña</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="********" />
+          <span class="toggle-password">👁️</span>
+        </div>
+  
+        <div class="options">
+          <label><input type="checkbox" /> Recordarme</label>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+  
+        <button type="submit">🔐 Iniciar sesión</button>
+  
+        <p class="register">¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+      </form>
+    </div>
+  </div>
+   -->
+   <div class="ai-hud-component">
+    <div class="ai-hud-grid"></div>
+    <div class="ai-hud-frame">
+      <form  #loginForm="">
+        <div class="ai-hud-input-wrapper">
+          <input
+            type="text"
+            name="username"
+            ngModel
+            class="ai-hud-input"
+            placeholder="Enter username..."
+            required
+          />
+        </div>
+        <div class="ai-hud-input-wrapper" style="margin-top: 1rem;">
+          <input
+            type="password"
+            name="password"
+            ngModel
+            class="ai-hud-input"
+            placeholder="Enter password..."
+            required
+          />
+        </div>
+        <div class="ai-hud-input-wrapper" style="margin-top: 1.5rem; justify-content: center;">
+          <button type="submit" class="ai-hud-btn">
+            <svg class="ai-hud-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2H3m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
