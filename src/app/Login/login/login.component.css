@@ -1,253 +1,47 @@
-/* Fondo degradado
- .login-container { 
-    height: 100vh;
-    background: linear-gradient(135deg, #5f2c82, #49a09d);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-   Caja de login 
-  .login-box {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
-  }
-  
-   Título 
-  .login-box h2 {
-    margin-bottom: 0.5rem;
-    color: #5f2c82;
-  }
-  
-  Subtítulo 
-  .login-box p {
-    margin-bottom: 1.5rem;
-    color: #666;
-  }
-  
-  /* Labels y inputs 
-  .login-box label {
-    display: block;
-    text-align: left;
-    margin-top: 1rem;
-    font-weight: 500;
-  }
-  
-  .login-box input[type="email"],
-  .login-box input[type="password"] {
-    width: 100%;
-    padding: 0.7rem;
-    margin-top: 0.3rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  
-  /* Contraseña con ícono 
-  .password-wrapper {
-    position: relative;
-  }
-  
-  .password-wrapper input {
-    padding-right: 2.5rem;
-  }
-  
-  .toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }
-  
-  /* Recordarme y Olvidaste 
-  .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .options a {
-    text-decoration: none;
-    color: #5f2c82;
-  }
-  
-  /* Botón iniciar sesión 
-  .login-box button {
-    margin-top: 1.5rem;
-    width: 100%;
-    padding: 0.8rem;
-    background: linear-gradient(to right, #5f2c82, #49a09d);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .login-box button:hover {
-    background: linear-gradient(to right, #4e2670, #3c8b87);
-  }
-  
-  /* Registro 
-  .register {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .register a {
-    color: #5f2c82;
-    text-decoration: none;
-    font-weight: 500;
-  }
-   */
+root{
+  padding: 0;
+  margin: 0;
+}
+body{
+  position: relative;
+}
 
-   /* Todo el CSS que compartiste tú se copia aquí sin modificar */
-
-.ai-hud-component {
+.content{
+  background-color: black;
+  width:90vw;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  min-width: 100%;
-  background: #050a1a;
-  position: relative;
-  overflow: hidden;
-}
-
-.ai-hud-grid {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  text-align: center;
+  inset: 0;
+  margin: auto;
+  
+}
+
+.caja{
+  width: 50%;
   height: 100%;
-  background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 255, 0.05) 0px,
-      rgba(0, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0, 255, 255, 0.05) 0px,
-      rgba(0, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 20px
-    );
-  animation: grid-move 2s linear infinite;
-  z-index: 0;
+  margin: 70px;
+  color: white;
 }
 
-.ai-hud-frame {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  padding: 1.5rem;
-  width: 24em;
-  background: rgba(0, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  z-index: 2;
-  animation: frame-pulse 5s infinite ease-in-out;
+.right{
+
+  background-color: rgba(255, 124, 36, 0.945);
+}
+.left{
+
 }
 
-.ai-hud-input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  z-index: 3;
+.form {
+  width: 100%;
 }
 
-.ai-hud-input {
-  flex: 1;
-  background: transparent;
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  outline: none;
-  color: #00ffff;
-  font-family: "Courier New", monospace;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 0.75rem;
-  caret-color: #00ffff;
-  transition:
-    border 0.3s,
-    box-shadow 0.3s;
-}
+.mv {
+  margin: 6% 19%;
+  width: 60%;
+  display: block;
 
-.ai-hud-input:hover {
-  border: 1px solid rgba(0, 255, 255, 0.5);
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-}
-
-.ai-hud-input::placeholder {
-  color: rgba(0, 255, 255, 0.4);
-}
-
-.ai-hud-btn {
-  background: rgba(0, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.4);
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  margin-left: 0.75rem;
-  transition: all 0.4s ease;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
-  transform: rotate(-1deg);
-}
-
-.ai-hud-btn:hover {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.8),
-    0 0 40px rgba(0, 255, 255, 0.5);
-  background: rgba(0, 255, 255, 0.08);
-  transform: rotate(-1deg) scale(1.1);
-}
-
-.ai-hud-btn:active {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.8),
-    0 0 40px rgba(0, 255, 255, 0.5);
-  background: rgba(0, 255, 255, 0.08);
-  transform: rotate(-2deg) scale(1);
-}
-
-.ai-hud-icon {
-  width: 1rem;
-  height: 1rem;
-  stroke: #00ffff;
-}
-
-@keyframes grid-move {
-  0% {
-    background-position:
-      0 0,
-      0 0;
-  }
-  100% {
-    background-position:
-      40px 40px,
-      40px 40px;
-  }
-}
-
-@keyframes frame-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.95;
-  }
 }
