@@ -1,11 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { ServicesService } from '../../Servicios/services.service';
 
 @Component({
   selector: 'app-registro',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
 
+  constructor(private router: Router){
+
+  }
+  
+
+  public apiS = inject(ServicesService)
+
+
+
+  saveUser(email:any, clave:any, apodo:any){
+    this.apiS.saveUser(email.value, clave.value, apodo.value).subscribe({
+      next:(data:any)=>{
+        this.router.navigate(["/navBar"])
+        localStorage.setItem("condicion", "si" )
+
+        
+
+
+      },error:(e:any)=>{
+        console.log(e);
+      }
+    })
+  }
 }

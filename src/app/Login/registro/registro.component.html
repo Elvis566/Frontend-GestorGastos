@@ -1,83 +1,24 @@
-<div class="ai-hud-component">
-    <div class="ai-hud-grid"></div>
-    <div class="ai-hud-frame">
-      <h2 style="color: #00ffff; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
-        Crear cuenta
-      </h2>
-      <p style="color: rgba(0, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 1.5rem;">
-        Regístrate para comenzar
-      </p>
-  
-      <form #registerForm="">
-        <div class="ai-hud-input-wrapper">
-          <input
-            type="text"
-            name="fullname"
-            ngModel
-            class="ai-hud-input"
-            placeholder="Nombre completo"
-            required
-          />
-        </div>
-  
-        <div class="ai-hud-input-wrapper" style="margin-top: 1rem;">
-          <input
-            type="email"
-            name="email"
-            ngModel
-            class="ai-hud-input"
-            placeholder="Correo electrónico"
-            required
-          />
-        </div>
-  
-        <div class="ai-hud-input-wrapper" style="margin-top: 1rem;">
-          <input
-            type="text"
-            name="username"
-            ngModel
-            class="ai-hud-input"
-            placeholder="Nombre de usuario"
-            required
-          />
-        </div>
-  
-        <label for="password" style="margin-top: 1.25rem; color: rgba(0, 255, 255, 0.6); font-size: 0.8rem;">
-          Contraseña
-        </label>
-        <div class="ai-hud-input-wrapper password-wrapper" style="margin-top: 0.25rem;">
-          <input
-            type="password"
-            name="password"
-            ngModel
-            class="ai-hud-input"
-            placeholder="********"
-            required
-          />
-          <span class="toggle-password" style="color: #00ffff; cursor: pointer; margin-left: 0.5rem;">👁️</span>
-        </div>
-  
-        <div class="ai-hud-input-wrapper" style="margin-top: 1rem;">
-          <input
-            type="password"
-            name="confirmPassword"
-            ngModel
-            class="ai-hud-input"
-            placeholder="Confirmar contraseña"
-            required
-          />
-        </div>
-  
-        <div style="margin-top: 1.5rem; display: flex; justify-content: center;">
-          <button type="submit" class="ai-hud-btn">
-            ✅ Registrarse
-          </button>
-        </div>
-  
-        <p style="color: rgba(0, 255, 255, 0.5); font-size: 0.8rem; text-align: center; margin-top: 1.5rem;">
-          ¿Ya tienes una cuenta? <a href="/login" style="color: #00ffff;">Inicia sesión</a>
-        </p>
-      </form>
+<div class="content">
+
+  <div class="right caja">
+    <div class="form">
+        <input #email class="mv" type="text">
+        <input #clave class="mv" type="text">
+        <input #apodo class="mv" type="text">
+        <button class="mv" (click)="saveUser(email, clave, apodo)">Resitrate</button>
+        <a class="mv" href="#">¿Olvidaste tu contraseña?</a>
+        <button class="mv"><a routerLink="/login">¿No tienes cuenta? Crea una ahora...</a></button>
     </div>
   </div>
-  
+
+  <div class="left caja">
+    <h1>Bienvenidos</h1>
+    <h3>A</h3>
+    <h2>Su gestos de gastos</h2>
+    <h2>Favorito</h2>
+    <p>Registrate para continuar</p>
+  </div>
+
+
+
+</div>

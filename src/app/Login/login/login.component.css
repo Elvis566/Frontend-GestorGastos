@@ -29,7 +29,7 @@ body{
 
 .right{
 
-  background-color: rgba(255, 124, 36, 0.945);
+  background: linear-gradient(175deg, #fc7507, #d37ac0cb) ;
 }
 .left{
 
@@ -43,5 +43,10 @@ body{
   margin: 6% 19%;
   width: 60%;
   display: block;
+  height: 20px;
 
+}
+
+.ir{
+  display: none;
 }

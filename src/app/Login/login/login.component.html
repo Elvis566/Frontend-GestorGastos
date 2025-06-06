@@ -8,11 +8,11 @@
   </div>
   <div class="right caja">
     <div class="form">
-        <input class="mv" type="text">
-        <input class="mv" type="text">
-        <button class="mv">Iniciar Secion</button>
+        <input #gmail class="mv" type="text" placeholder="Ingrese su usuario o gmail">
+        <input #clave class="mv" type="password" placeholder="Inglese su clave">
+        <button [routerLinkActive]="'ir'" (click)="login(gmail, clave)" class="mv">Iniciar Secion</button>
         <a class="mv" href="#">¿Olvidaste tu contraseña?</a>
-        <button class="mv"><a href="#">¿No tienes cuenta? Crea una ahora...</a></button>
+        <a class="mv" routerLink="/register">¿No tienes cuenta? Crea una ahora...</a>
     </div>
   </div>
 </div>
