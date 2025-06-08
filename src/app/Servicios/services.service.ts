@@ -22,4 +22,29 @@ export class ServicesService {
       apodo: apodo
     })
   }
+  createProject(titulo:any, descripcion:any, userId: any){
+    return this.http.post("http://localhost:3000/project/save",{
+      titulo:titulo,
+      descripcion: descripcion,
+      userId: userId
+    })
+  }
+
+
+  getProject(id:number){
+    return this.http.get("http://localhost:3000/project/obtener/"+id)
+  }
+
+  getProjects(id:number){
+    return this.http.get("http://localhost:3000/project/traerlos/"+id)
+
+  }
+
+  saveImages(targetId: number, targetType:string, avatar:any){
+    return this.http.post("http://localhost:3000/foto/create",{
+      targetId: targetId,
+      targetType: targetType,
+      avatar: avatar
+    })
+  }
 }
