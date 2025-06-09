@@ -41,10 +41,12 @@ export class ServicesService {
   }
 
   saveImages(targetId: number, targetType:string, avatar:any){
-    return this.http.post("http://localhost:3000/foto/create",{
-      targetId: targetId,
-      targetType: targetType,
-      avatar: avatar
-    })
+    const formData = new FormData();
+
+    formData.append('targetId', targetId.toString());
+    formData.append('targetType', targetType);
+    formData.append('avatar', avatar); // nombre del campo para la imagen
+
+    return this.http.post("http://localhost:3000/foto/create", formData)
   }
 }

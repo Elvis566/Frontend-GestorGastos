@@ -23,11 +23,8 @@ export class RegistroComponent {
     this.apiS.saveUser(email.value, clave.value, apodo.value).subscribe({
       next:(data:any)=>{
         this.router.navigate(["/navBar"])
-        localStorage.setItem("condicion", "si" )
-
-        
-
-
+        // localStorage.setItem("condicion", "si" )
+        localStorage.setItem("contadorP", "0")
       },error:(e:any)=>{
         console.log(e);
       }

@@ -10,26 +10,22 @@ import { ServicesService } from '../../Servicios/services.service';
 })
 export class FormProjectComponent {
 
-  project:Project; 
-  contador:number = 1;
   userId:number = parseInt(localStorage.getItem("userId") || "0") 
-
-  constructor(){
-  this.project = {
-    // titulo: '',
-    // descripcion: '',
-    selectedFile: null
-  };
-
-  }
+  contador:number = 0;
+  selectedFile:File | null = null;
 
   public apiS = inject(ServicesService)
 
-  onFileSelected(event: any) {
-    this.project.selectedFile = event.target.files[0];
+  onFileSelected(event: any):void {
+    const file = event.target.files[0];
+    
+    if(file){
+      this.selectedFile = file
+    }
   }
 
   saveProject(titulo:string, descripcion:string) {
+    this.contador = parseInt(localStorage.getItem("contadorP") || "0") + 1
     this.apiS.createProject(titulo, descripcion, this.userId).subscribe({
       next:(data:any)=>{
         console.log("Mensaje exitoso");
@@ -37,14 +33,15 @@ export class FormProjectComponent {
         console.log("Mensaje de error");
       }
     })
-
-    this.apiS.saveImages(this.contador, "proyecto", this.project.selectedFile).subscribe({
+    this.apiS.saveImages(this.contador, "proyecto", this.selectedFile).subscribe({
       next:(data:any)=>{
         console.log("Mensaje exitoso");
       }, error:(e:any)=>{
         console.log("Mensaje de error");
       }
     })
+
+    localStorage.setItem("contadorP", this.contador.toString())
   
   }
 
