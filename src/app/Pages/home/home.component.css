@@ -4,12 +4,15 @@ div{
 
 .btn{
     margin-top: 30px;
-    width: 150px;
-    height: 50px;
-    background-color: rgba(91, 146, 121, 0.075);
+    width: 200px;
+    height: 200px;
+    background-color: rgba(74, 206, 146, 0.301);
 }
 
 .btn:hover{
     background-color: rgba(71, 247, 71, 0.925);
 }
 
+section{
+    margin-top: 30px;
+}

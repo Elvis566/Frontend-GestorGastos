@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ListaPComponent } from '../lista-p/lista-p.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, ListaPComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

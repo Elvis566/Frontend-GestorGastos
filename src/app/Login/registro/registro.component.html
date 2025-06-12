@@ -2,9 +2,9 @@
 
   <div class="right caja">
     <div class="form">
-        <input #email class="mv" type="text">
-        <input #clave class="mv" type="text">
-        <input #apodo class="mv" type="text">
+        <input #email class="mv" type="text" placeholder="Ingresa tu email" >
+        <input #clave class="mv" type="text" placeholder="Ingresa tu clave" >
+        <input #apodo class="mv" type="text" placeholder="Ingresa tu apodo">
         <button class="mv" (click)="saveUser(email, clave, apodo)">Resitrate</button>
         <a class="mv" href="#">¿Olvidaste tu contraseña?</a>
         <button class="mv"><a routerLink="/login">¿No tienes cuenta? Crea una ahora...</a></button>

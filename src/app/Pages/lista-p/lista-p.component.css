@@ -1,0 +1,29 @@
+.titulo{
+    margin-top: 25px;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    margin: 25px 0px;
+    width: 400px;
+}
+
+.filter input{
+    width: 250px;
+    height: 20px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.card{
+    border: black 3px solid;
+    height: 300px;
+    
+}

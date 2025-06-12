@@ -22,7 +22,7 @@ export class RegistroComponent {
   saveUser(email:any, clave:any, apodo:any){
     this.apiS.saveUser(email.value, clave.value, apodo.value).subscribe({
       next:(data:any)=>{
-        this.router.navigate(["/navBar"])
+        this.router.navigate(["/home"])
         // localStorage.setItem("condicion", "si" )
         localStorage.setItem("contadorP", "0")
       },error:(e:any)=>{

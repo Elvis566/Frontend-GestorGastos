@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Project } from '../../Interfaces/project';
 import { ServicesService } from '../../Servicios/services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-project',
@@ -10,6 +11,10 @@ import { ServicesService } from '../../Servicios/services.service';
 })
 export class FormProjectComponent {
 
+
+  constructor(private router: Router){
+
+  }
   userId:number = parseInt(localStorage.getItem("userId") || "0") 
   contador:number = 0;
   selectedFile:File | null = null;
@@ -42,6 +47,8 @@ export class FormProjectComponent {
     })
 
     localStorage.setItem("contadorP", this.contador.toString())
+
+    this.router.navigate(["/home"])
   
   }
 
