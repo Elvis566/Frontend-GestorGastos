@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-    @for (item of PROJECTS; track $index) {
+    @for (item of PROJECTS(); track item.id) {
         <div class="card">
             <h3>{{item.titulo}}</h3>
             <p>{{item.descripcion}}</p>

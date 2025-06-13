@@ -33,6 +33,7 @@ export class FormProjectComponent {
     this.contador = parseInt(localStorage.getItem("contadorP") || "0") + 1
     this.apiS.createProject(titulo, descripcion, this.userId).subscribe({
       next:(data:any)=>{
+        this.apiS.triggerRefresh();
         console.log("Mensaje exitoso");
       }, error:(e:any)=>{
         console.log("Mensaje de error");

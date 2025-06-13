@@ -1,29 +1,37 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
+import { single } from 'rxjs';
 
 @Component({
   selector: 'app-lista-p',
   imports: [],
+  standalone: true,
   templateUrl: './lista-p.component.html',
   styleUrl: './lista-p.component.css'
 })
 export class ListaPComponent {
-  message:string = "";
-  PROJECTS: any
 
   public apiS = inject(ServicesService);
 
-  ngOnInit(){
-    this.getProjects()
+  userId = signal<number>(parseInt(localStorage.getItem("userId") || "0"));
+  message = signal<string>("");
+  PROJECTS = signal<any[]>([])
+
+  
+  constructor(){
+    effect(() => {
+      const _ = this.apiS.refresh$();  // reactivo
+      this.getProjects();              // se ejecuta cuando cambia
+    });
   }
 
-  getProjects(){
-    const userId = parseInt(localStorage.getItem("userId") || "0")
 
-    this.apiS.getProjects(userId).subscribe({
+  getProjects(){
+
+    this.apiS.getProjects(this.userId()).subscribe({
       next:(data:any)=>{
-        this.PROJECTS = data.PROJECTS;
-        this.message = data.message;
+        this.PROJECTS.set(data.PROJECTS);
+        this.message.set(data.message);
 
       },error:(e:any)=>{
         console.log("Error");

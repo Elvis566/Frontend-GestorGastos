@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,16 @@ import { Injectable } from '@angular/core';
 export class ServicesService {
 
   constructor(private http:HttpClient) { }
+
+  private refreshTrigger = signal(0); // cada cambio actualiza el valor
+
+  get refresh$() {
+    return this.refreshTrigger.asReadonly();
+  }
+
+  triggerRefresh() {
+    this.refreshTrigger.set(this.refreshTrigger() + 1);
+  }
 
   login(gmail:any, clave:any){
     return this.http.post("http://localhost:3000/user/login",{
