@@ -6,13 +6,17 @@
     <button>filtro</button>
 </div>
 
-<div class="container">
+<div class="container" >
     @for (item of PROJECTS(); track item.id) {
-        <div class="card">
+        <div class="card" [routerLink]="['/d-project', item.id]" >
             <h3>{{item.titulo}}</h3>
-            <p>{{item.descripcion}}</p>
-            <p>estado</p>
-            
+            <p>{{item.shortText}}</p>
+            <img src="https://cdn.pixabay.com/photo/2022/05/08/18/30/broken-heart-7182718_1280.png" alt="{{item.foto}}">
+            @if (item.estado) {
+                <p class="green">En proceso</p>
+            }@else {
+                <p class="danger">Terminado</p>
+            }
         </div>
     }
 </div>

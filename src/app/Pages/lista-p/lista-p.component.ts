@@ -1,10 +1,11 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
 import { single } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-lista-p',
-  imports: [],
+  imports: [RouterLink],
   standalone: true,
   templateUrl: './lista-p.component.html',
   styleUrl: './lista-p.component.css'

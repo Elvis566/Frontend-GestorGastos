@@ -27,3 +27,20 @@
     height: 300px;
     
 }
+
+.card img{
+    width: 70%;
+    height: 160px;
+    margin: 0px 50px;
+}
+
+.green{
+    background-color: rgb(53, 245, 27);
+    border: black solid 2px;
+    width: 100px;
+    height: auto;
+    border-radius: 3px;
+    /* margin-top: px; */
+    margin-left: 240px;
+}
+
