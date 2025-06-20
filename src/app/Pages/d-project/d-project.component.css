@@ -1,5 +1,6 @@
 .container{
     margin: 5px 15px 0px 15px;
+    position: relative;
 }
 
 header{
@@ -12,6 +13,8 @@ header{
     display: flex;
 }
 
+
+
 .inicio p{
     margin: auto 100px;
     background-color: rgba(121, 241, 52, 0.514);
@@ -20,9 +23,14 @@ header{
     border-radius: 10px;
 }
 
+.inicio button{
+    width: auto;
+    height: 30px;
+}
+
 .climg{
     /* display: flex; */
-    width: 95vw;
+    width: 92vw;
     height: 300px;
     /* border: 3px solid black; */
     overflow: auto;
@@ -52,4 +60,26 @@ header{
 .sp{
     display: flex;
     justify-content: space-between;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 90vh;
+    background-color: rgba(66, 61, 61, 0.288);
+}
+
+.oculto{
+    display: none;
+}
+
+.menu{
+    display: block;
+}
+
+.anidados{
+    display: block;
+    background-color: rgba(197, 171, 171, 0.39);
 }
