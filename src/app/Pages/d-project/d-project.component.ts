@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DProjectComponent {
 
+  activo = signal<boolean>(false)
+
   constructor(private route: ActivatedRoute){
 
   }
@@ -33,5 +35,15 @@ export class DProjectComponent {
       }
     })
   }
+
+  activar(valor:number){
+    if(valor === 1){
+      this.activo.set(true)
+    }else{
+      this.activo.set(false)
+    }
+  }
+
+
 
 }

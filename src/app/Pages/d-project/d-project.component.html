@@ -3,7 +3,7 @@
         <div class="inicio">
             <h1>{{project.titulo}}</h1>
             <p>Estado</p>
-            <button>Configuracion</button>
+            <button (click)="activar(1)">Configuracion</button>
         </div>
         <p>{{project.descripcion}}</p>
     </header>
@@ -55,10 +55,14 @@
 
     </footer>
 
-    <nav class="menu oculto">
-        <button class="anidados">Terminar</button>
-        <button class="anidados">Actualizar</button>
-        <button class="anidados">Eliminar</button>
-    </nav>
+    @if (activo()) {
+        <nav class="menu oculto">
+            <button class="anidados">Terminar</button>
+            <button class="anidados">Actualizar</button>
+            <button class="anidados">Eliminar</button>
+            <button class="anidados" (click)="activar(0)">Regresar</button>
+
+        </nav>
+    }
 
 </div>

@@ -11,6 +11,7 @@ header{
 
 .inicio{
     display: flex;
+    position: relative;
 }
 
 
@@ -26,6 +27,9 @@ header{
 .inicio button{
     width: auto;
     height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .climg{
@@ -80,6 +84,15 @@ header{
 }
 
 .anidados{
-    display: block;
-    background-color: rgba(197, 171, 171, 0.39);
+    width: 100%;
+    height: 50px;
+    text-align: start;
+    border: 0;
+    /* display: block; */
+    background-color: rgba(248, 175, 175, 0.274);
+
+}
+
+.anidados:hover{
+    background-color: rgba(126, 226, 126, 0.274);
 }
