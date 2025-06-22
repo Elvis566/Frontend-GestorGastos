@@ -20,10 +20,13 @@ export class RegistroComponent {
 
 
   saveUser(email:any, clave:any, apodo:any){
+    debugger
     this.apiS.saveUser(email.value, clave.value, apodo.value).subscribe({
       next:(data:any)=>{
-        this.router.navigate(["/home"])
-        // localStorage.setItem("condicion", "si" )
+       
+        localStorage.setItem("userId", data.USER.id)
+        console.log(localStorage.getItem("userId"))
+         this.router.navigate(["/home"])
         localStorage.setItem("contadorP", "0")
       },error:(e:any)=>{
         console.log(e);
