@@ -75,14 +75,6 @@ header{
     background-color: rgba(66, 61, 61, 0.288);
 }
 
-.oculto{
-    display: none;
-}
-
-.menu{
-    display: block;
-}
-
 .anidados{
     width: 100%;
     height: 50px;

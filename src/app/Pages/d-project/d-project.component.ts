@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
 import { ActivatedRoute } from '@angular/router';
+import { MenuComponent } from '../Complement/menu/menu.component';
 
 @Component({
   selector: 'app-d-project',
@@ -12,9 +13,7 @@ export class DProjectComponent {
 
   activo = signal<boolean>(false)
 
-  constructor(private route: ActivatedRoute){
-
-  }
+  constructor(private route: ActivatedRoute){}
 
   public apiS = inject(ServicesService)
   project:any
@@ -36,13 +35,15 @@ export class DProjectComponent {
     })
   }
 
-  activar(valor:number){
-    if(valor === 1){
-      this.activo.set(true)
-    }else{
-      this.activo.set(false)
+    activar(valor:number){
+      if(valor === 1){
+        this.activo.set(true)
+      }else{
+        this.activo.set(false)
+      }
     }
-  }
+
+
 
 
 
