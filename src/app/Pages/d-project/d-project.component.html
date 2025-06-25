@@ -2,7 +2,13 @@
     <header>
         <div class="inicio">
             <h1>{{project.titulo}}</h1>
-            <p>Estado</p>
+
+            @if (project.estado) {
+                <p class="gree-status">En proceso</p>
+            }@else {
+                <p class="red-status">Terminado</p>
+            }
+    
             <button (click)="activar(1)">Configuracion</button>
         </div>
         <p>{{project.descripcion}}</p>

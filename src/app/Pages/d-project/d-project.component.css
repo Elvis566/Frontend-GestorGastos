@@ -18,10 +18,19 @@ header{
 
 .inicio p{
     margin: auto 100px;
-    background-color: rgba(121, 241, 52, 0.514);
     width: 200px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 20px;
+}
+
+.gree-status{
+    background-color: rgba(121, 241, 52, 0.514);
+
+}
+
+.red-status{
+    background-color: rgba(241, 74, 52, 0.767);
+
 }
 
 .inicio button{

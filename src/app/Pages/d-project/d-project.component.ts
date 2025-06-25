@@ -1,7 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
 import { ActivatedRoute } from '@angular/router';
-import { MenuComponent } from '../Complement/menu/menu.component';
 
 @Component({
   selector: 'app-d-project',
