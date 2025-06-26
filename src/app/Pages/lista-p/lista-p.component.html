@@ -13,9 +13,9 @@
             <p>{{item.shortText}}</p>
             <img src="https://cdn.pixabay.com/photo/2022/05/08/18/30/broken-heart-7182718_1280.png" alt="{{item.foto}}">
             @if (item.estado) {
-                <p class="green">En proceso</p>
+                <p class="estado green">En proceso</p>
             }@else {
-                <p class="danger">Terminado</p>
+                <p class="estado danger">Terminado</p>
             }
         </div>
     }

@@ -35,8 +35,7 @@
     margin: 0px 50px;
 }
 
-.green{
-    background-color: rgb(53, 245, 27);
+.estado{
     border: black solid 2px;
     width: 100px;
     height: auto;
@@ -46,5 +45,13 @@
     right: 10px;
     bottom: 0;
     position: absolute;
+}
+
+.green{
+    background-color: rgb(53, 245, 27);
+}
+
+.danger{
+    background-color: rgba(241, 74, 52, 0.932);
 }
 

@@ -59,4 +59,10 @@ export class ServicesService {
 
     return this.http.post("http://localhost:3000/foto/create", formData)
   }
+
+  terminarProject(id:number, estado:boolean){
+    return this.http.put("http://localhost:3000/project/project-stop/"+id,
+      {estado: estado}
+    )
+  }
 }
