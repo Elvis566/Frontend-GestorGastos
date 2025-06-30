@@ -38,6 +38,12 @@ export class DProjectComponent {
     })
   }
 
+  deleteProject(){
+    this.apiS.deleteProject(this.project.id).subscribe()
+    this.router.navigate(["/home"])
+
+  }
+
   textTerm(estado:boolean){
     if(estado){
       this.texto = "Terminar"
@@ -53,10 +59,6 @@ export class DProjectComponent {
         this.activo.set(false)
       }
   }
-
-    eliminar(id:number){
-      this.apiS
-    }
 
     terminar(){
       this.apiS.terminarProject(this.project.id, this.estado()).subscribe()

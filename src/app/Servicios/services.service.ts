@@ -65,4 +65,8 @@ export class ServicesService {
       {estado: estado}
     )
   }
+
+    deleteProject(id:number){
+    return this.http.delete("http://localhost:3000/project/project-delete/"+id)
+  }
 }
