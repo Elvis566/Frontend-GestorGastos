@@ -16,6 +16,7 @@ export class DProjectComponent {
 
   public apiS = inject(ServicesService)
   project:any
+  images:any
   id = signal<number>(0)
   estado =signal<boolean>(true)
   texto:string=""
@@ -24,6 +25,7 @@ export class DProjectComponent {
     const ID = this.route.snapshot.paramMap.get('id')
     this.id.set(ID ? +ID : 0); 
     this.getProyect()
+    this.getImages()
   }
 
   getProyect(){
@@ -67,6 +69,19 @@ export class DProjectComponent {
 
     update(id:number){
       
+    }
+
+    getImages(){
+      console.log(this.id());
+      debugger
+      this.apiS.getImages(this.id()).subscribe({
+        next:(data:any)=>{
+          this.images = data.FOTOS
+          console.log(this.images);
+        },error:(e:any)=>{
+          console.log(e);
+        }
+      })
     }
 
 

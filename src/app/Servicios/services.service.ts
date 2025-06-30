@@ -69,4 +69,8 @@ export class ServicesService {
     deleteProject(id:number){
     return this.http.delete("http://localhost:3000/project/project-delete/"+id)
   }
+
+  getImages(id:number){
+    return this.http.get("http://localhost:3000/foto/traer/"+id)
+  }
 }

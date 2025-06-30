@@ -21,32 +21,9 @@
         </button>
         <!-- <hr> -->
         <div class="img-container">
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
-
-            <div><img src="" alt="aqui"></div>
-            <div><img src="" alt="aqui"></div>
+            @for (item of images; track $index) {
+                <div><img src="https://cdn.pixabay.com/photo/2022/05/08/18/30/broken-heart-7182718_1280.png" alt="{{item.id}}"></div>
+            }
         </div>
     </section>
 
