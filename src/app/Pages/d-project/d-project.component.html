@@ -16,9 +16,11 @@
 
     <hr>
     <section class="climg">
-        <button class="add">
+        <button (click)="saveImages()" class="add">
             Agrega 
         </button>
+        <input class="tm" type="file" (change)="onFileSelected($event)">
+
         <!-- <hr> -->
         <div class="img-container">
             @for (item of images; track $index) {

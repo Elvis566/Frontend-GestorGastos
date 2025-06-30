@@ -20,12 +20,32 @@ export class DProjectComponent {
   id = signal<number>(0)
   estado =signal<boolean>(true)
   texto:string=""
+  selectedFile:File | null = null;
+
+
+  onFileSelected(event: any):void {
+    const file = event.target.files[0];
+    
+    if(file){
+      this.selectedFile = file
+    }
+  }
 
   ngOnInit(){
     const ID = this.route.snapshot.paramMap.get('id')
     this.id.set(ID ? +ID : 0); 
     this.getProyect()
     this.getImages()
+  }
+
+  saveImages(){
+    this.apiS.saveImages(this.id(), "proyecto", this.selectedFile).subscribe({
+      next:(data:any)=>{
+        console.log("Mensaje exitoso");
+      }, error:(e:any)=>{
+        console.log("Mensaje de error");
+      }
+    })
   }
 
   getProyect(){
@@ -83,6 +103,8 @@ export class DProjectComponent {
         }
       })
     }
+
+    
 
 
 

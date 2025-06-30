@@ -73,4 +73,8 @@ export class ServicesService {
   getImages(id:number){
     return this.http.get("http://localhost:3000/foto/traer/"+id)
   }
+
+  getCounterProject(){
+    return this.http.get("http://localhost:3000/project/counter-project")
+  }
 }

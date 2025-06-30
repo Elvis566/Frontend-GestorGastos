@@ -29,8 +29,16 @@ export class FormProjectComponent {
     }
   }
 
+
   saveProject(titulo:string, descripcion:string) {
-    this.contador = parseInt(localStorage.getItem("contadorP") || "0") + 1
+    this.apiS.getCounterProject().subscribe({
+      next:(data:any)=>{
+        this.contador = data.countProject
+      },error:(e:any)=>{
+        console.log(e);
+      }
+    })
+    // this.contador = parseInt(localStorage.getItem("contadorP") || "0") + 1
     this.apiS.createProject(titulo, descripcion, this.userId).subscribe({
       next:(data:any)=>{
         this.apiS.triggerRefresh();
@@ -47,7 +55,7 @@ export class FormProjectComponent {
       }
     })
 
-    localStorage.setItem("contadorP", this.contador.toString())
+    // localStorage.setItem("contadorP", this.contador.toString())
 
     this.router.navigate(["/home"])
   
