@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-d-project',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './d-project.component.html',
   styleUrl: './d-project.component.css'
 })
@@ -31,6 +31,13 @@ export class DProjectComponent {
     }
   }
 
+    recargarComponente() {
+    const url = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]);
+    });
+  }
+
   ngOnInit(){
     const ID = this.route.snapshot.paramMap.get('id')
     this.id.set(ID ? +ID : 0); 
@@ -46,6 +53,9 @@ export class DProjectComponent {
         console.log("Mensaje de error");
       }
     })
+
+    this.recargarComponente()
+
   }
 
   getProyect(){
@@ -85,10 +95,6 @@ export class DProjectComponent {
     terminar(){
       this.apiS.terminarProject(this.project.id, this.estado()).subscribe()
       this.router.navigate(["/home"])
-    }
-
-    update(id:number){
-      
     }
 
     getImages(){

@@ -77,4 +77,12 @@ export class ServicesService {
   getCounterProject(){
     return this.http.get("http://localhost:3000/project/counter-project")
   }
+
+  updateProject(titulo:string, descripcion: string, id:number){
+    return this.http.put("http://localhost:3000/project/project-update/"+id,{
+      titulo:titulo,
+      descripcion:descripcion
+    })
+
+  }
 }

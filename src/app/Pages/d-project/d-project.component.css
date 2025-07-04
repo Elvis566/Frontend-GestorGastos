@@ -89,7 +89,8 @@ div img{
     right: 0;
     width: 300px;
     height: 90vh;
-    background-color: rgba(66, 61, 61, 0.288);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
 }
 
 .anidados{
@@ -97,11 +98,11 @@ div img{
     height: 50px;
     text-align: start;
     border: 0;
+    background-color: white;
     /* display: block; */
-    background-color: rgba(248, 175, 175, 0.274);
 
 }
 
 .anidados:hover{
-    background-color: rgba(126, 226, 126, 0.274);
+    background-color: rgba(22, 24, 22, 0.829);
 }

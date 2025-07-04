@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Project } from '../../Interfaces/project';
 import { ServicesService } from '../../Servicios/services.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-project',
@@ -12,14 +12,19 @@ import { Router } from '@angular/router';
 export class FormProjectComponent {
 
 
-  constructor(private router: Router){
+  constructor(private router: Router, private route: ActivatedRoute){}
 
-  }
+  id = signal<number>(0)
   userId:number = parseInt(localStorage.getItem("userId") || "0") 
   contador:number = 0;
   selectedFile:File | null = null;
 
   public apiS = inject(ServicesService)
+
+  ngOnInit(){
+    const ID = this.route.snapshot.paramMap.get('id')
+    this.id.set(ID ? +ID : 0); 
+  }
 
   onFileSelected(event: any):void {
     const file = event.target.files[0];
@@ -59,6 +64,14 @@ export class FormProjectComponent {
 
     this.router.navigate(["/home"])
   
+  }
+
+  Comprobante(titulo:string, descripcion:string){
+    if(this.id() == 0){
+      this.saveProject(titulo, descripcion)
+    }else{
+
+    }
   }
 
 

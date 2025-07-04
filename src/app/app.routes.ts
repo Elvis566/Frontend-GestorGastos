@@ -13,7 +13,7 @@ export const routes: Routes = [
     {path: "register", component: RegistroComponent},
     {path: "navBar", component: NavBarComponent},
     {path: "home", component: HomeComponent},
-    {path: "form-project", component: FormProjectComponent},
+    {path: "form-project/:id", component: FormProjectComponent},
     {path: "d-project/:id", component: DProjectComponent},
     { path: '**', redirectTo: 'login' }
 
