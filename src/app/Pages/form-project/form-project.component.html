@@ -1,11 +1,11 @@
 <div class="container conjunto" >
     <div class="conjunto titulo">
         <label for="">Titulo</label>
-        <input #titulo class="" type="text" placeholder="Ingresa un titulo">
+        <input #titulo class="" value="{{projectS.titulo}}" type="text" placeholder="Ingresa un titulo">
     </div>
     <div class="conjunto descripcion">
         <label for="">Descripcion</label>
-        <textarea #descripcion class="tm" placeholder="Escribe algo..." name="" id=""></textarea>
+        <textarea #descripcion class="tm" value="{{projectS.descripcion}}" placeholder="Escribe algo..." name="" id=""></textarea>
     </div>
     <div class="conjunto imagen">
         <label for="">Ingresa tu imagen</label>
@@ -13,7 +13,7 @@
     </div>
 
     <footer class=" conjunto-2">
-        <button class="tm btn" (click)="saveProject(titulo.value, descripcion.value)">Comenzar ahora</button>
+        <button class="tm btn" (click)="Comprobante(titulo.value, descripcion.value)">Comenzar ahora</button>
         <button class="tm btn">Cancelar</button>
     </footer>
 

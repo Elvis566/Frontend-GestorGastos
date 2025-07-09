@@ -19,11 +19,19 @@ export class FormProjectComponent {
   contador:number = 0;
   selectedFile:File | null = null;
 
+  projectS: Project = {
+    titulo:"",
+    descripcion: ""
+  }
+
   public apiS = inject(ServicesService)
 
   ngOnInit(){
     const ID = this.route.snapshot.paramMap.get('id')
     this.id.set(ID ? +ID : 0); 
+    if(this.id()>0){
+      this.getProject()
+    }
   }
 
   onFileSelected(event: any):void {
@@ -32,6 +40,15 @@ export class FormProjectComponent {
     if(file){
       this.selectedFile = file
     }
+  }
+
+  getProject(){
+    this.apiS.getProject(this.id()).subscribe({
+      next:(data:any)=>{
+        this.projectS.titulo = data.PROJECT.titulo
+        this.projectS.descripcion = data.PROJECT.descripcion
+      }
+    })
   }
 
 
@@ -66,10 +83,23 @@ export class FormProjectComponent {
   
   }
 
+  probador(){
+    
+  }
+
   Comprobante(titulo:string, descripcion:string){
     if(this.id() == 0){
       this.saveProject(titulo, descripcion)
     }else{
+      this.apiS.updateProject(titulo, descripcion, this.id()).subscribe()
+      this.apiS.saveImages(this.contador, "proyecto", this.selectedFile).subscribe({
+        next:(data:any)=>{
+          console.log("Mensaje exitoso");
+        }, error:(e:any)=>{
+          console.log("Mensaje de error");
+        }
+      })
+      this.router.navigate(["/d-project/"+ this.id()])
 
     }
   }
