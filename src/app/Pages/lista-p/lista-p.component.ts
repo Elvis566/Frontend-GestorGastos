@@ -2,6 +2,7 @@ import { Component, effect, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
 import { single } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { tick } from '@angular/core/testing';
 
 @Component({
   selector: 'app-lista-p',
@@ -17,6 +18,7 @@ export class ListaPComponent {
   userId = signal<number>(parseInt(localStorage.getItem("userId") || "0"));
   message = signal<string>("");
   PROJECTS = signal<any[]>([])
+  criterio = signal<string>("")
 
   
   constructor(){
@@ -29,7 +31,7 @@ export class ListaPComponent {
 
   getProjects(){
 
-    this.apiS.getProjects(this.userId()).subscribe({
+    this.apiS.getProjects(this.userId(), this.criterio()).subscribe({
       next:(data:any)=>{
         this.PROJECTS.set(data.PROJECTS);
         this.message.set(data.message);

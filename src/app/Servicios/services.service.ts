@@ -45,8 +45,11 @@ export class ServicesService {
     return this.http.get("http://localhost:3000/project/obtener/"+id)
   }
 
-  getProjects(id:number){
-    return this.http.get("http://localhost:3000/project/traerlos/"+id)
+  getProjects(id:number, criterio: string){
+    return this.http.get("http://localhost:3000/project/traerlos/"+id,{
+        params :{criterio: criterio}
+      }
+    )
 
   }
 

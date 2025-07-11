@@ -2,7 +2,12 @@
 
 <div class="filter">
     <h3>Busqueda</h3>
-    <input placeholder="buscar" type="text">
+    <input
+        placeholder="buscar" type="text"
+        [value]="criterio()"
+        (change)="criterio.set(buscar.value)"
+        #buscar
+    >
     <button>filtro</button>
 </div>
 
