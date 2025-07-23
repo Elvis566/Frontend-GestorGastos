@@ -1,0 +1,14 @@
+<div class="form">
+    <header class="cabecera">
+        <h1>Formulario de ingreso de gastos y ganancias</h1>
+    </header>
+    <section class="container">
+        <option value="">
+            @for (item of MANEJADOR; track item.id) {
+                <select name="{{item.id}}" id="">{{item.criterio}}</select>
+            }
+        </option>
+        <input type="text" placeholder="Ingresa un monto">
+        <button (click)="closePopup()">Registrar</button>
+    </section>
+</div>

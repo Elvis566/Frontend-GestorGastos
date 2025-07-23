@@ -36,9 +36,10 @@
             <p>Gasto total: <span>0</span></p>
             <p>Ganancia total: <span>0</span></p>
         </div>
-        <button class="add">Añadir</button>
+        <button class="add" (click)="openDialog()">Añadir</button>
 
     </footer>
+
 
     @if (activo()) {
         <nav class="menu oculto">

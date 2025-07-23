@@ -1,6 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { ServicesService } from '../../Servicios/services.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { FormGastoComponent } from '../form-gasto/form-gasto.component';
+import {MatDialog} from '@angular/material/dialog'
 
 @Component({
   selector: 'app-d-project',
@@ -12,7 +14,7 @@ export class DProjectComponent {
 
   activo = signal<boolean>(false)
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(private route: ActivatedRoute, private router: Router, private dialogRef: MatDialog ){}
 
   public apiS = inject(ServicesService)
   project:any
@@ -22,6 +24,12 @@ export class DProjectComponent {
   texto:string=""
   selectedFile:File | null = null;
 
+  openDialog(){
+    this.dialogRef.open(FormGastoComponent, {
+      width: "800px",
+      height:"400px"
+    })
+  }
 
   onFileSelected(event: any):void {
     const file = event.target.files[0];
