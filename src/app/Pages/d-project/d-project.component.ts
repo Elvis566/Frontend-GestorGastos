@@ -26,8 +26,8 @@ export class DProjectComponent {
 
   openDialog(){
     this.dialogRef.open(FormGastoComponent, {
-      width: "800px",
-      height:"400px"
+      width: "550px",
+      height:"350px"
     })
   }
 

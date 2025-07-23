@@ -3,12 +3,12 @@
         <h1>Formulario de ingreso de gastos y ganancias</h1>
     </header>
     <section class="container">
-        <option value="">
+        <select class="elemento" value="">
             @for (item of MANEJADOR; track item.id) {
-                <select name="{{item.id}}" id="">{{item.criterio}}</select>
+                <option value="{{item.id}}" id="">{{item.criterio}}</option>
             }
-        </option>
-        <input type="text" placeholder="Ingresa un monto">
-        <button (click)="closePopup()">Registrar</button>
+        </select>
+        <input class="elemento" type="number" placeholder="Ingresa un monto">
+        <button class="elemento" (click)="closePopup()">Registrar</button>
     </section>
 </div>

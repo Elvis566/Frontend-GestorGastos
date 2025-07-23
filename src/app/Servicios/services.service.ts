@@ -88,4 +88,12 @@ export class ServicesService {
     })
 
   }
+
+  ingresosProject(id:number, gasto: number, ganancia:number){
+    return this.http.put("http://localhost:3000/project/registro-ingresos/"+id,{
+      gasto:gasto,
+      ganancia: ganancia
+    })
+  }
 }
+
