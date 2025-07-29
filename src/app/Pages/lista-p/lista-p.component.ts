@@ -30,11 +30,12 @@ export class ListaPComponent {
 
 
   getProjects(){
-
+    
     this.apiS.getProjects(this.userId(), this.criterio()).subscribe({
       next:(data:any)=>{
         this.PROJECTS.set(data.PROJECTS);
         this.message.set(data.message);
+        console.log(data.message);
 
       },error:(e:any)=>{
         console.log("Error");

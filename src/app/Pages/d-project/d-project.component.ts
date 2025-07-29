@@ -49,6 +49,7 @@ export class DProjectComponent {
   ngOnInit(){
     const ID = this.route.snapshot.paramMap.get('id')
     this.id.set(ID ? +ID : 0); 
+    localStorage.setItem("idProject", this.id().toString())
     this.getProyect()
     this.getImages()
   }

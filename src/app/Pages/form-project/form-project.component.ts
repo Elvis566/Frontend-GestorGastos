@@ -52,40 +52,40 @@ export class FormProjectComponent {
   }
 
 
-  saveProject(titulo:string, descripcion:string) {
-    this.apiS.getCounterProject().subscribe({
-      next:(data:any)=>{
-        this.contador = data.countProject
-      },error:(e:any)=>{
-        console.log(e);
-      }
-    })
-    // this.contador = parseInt(localStorage.getItem("contadorP") || "0") + 1
-    this.apiS.createProject(titulo, descripcion, this.userId).subscribe({
-      next:(data:any)=>{
-        this.apiS.triggerRefresh();
-        console.log("Mensaje exitoso");
-      }, error:(e:any)=>{
-        console.log("Mensaje de error");
-      }
-    })
-    this.apiS.saveImages(this.contador, "proyecto", this.selectedFile).subscribe({
-      next:(data:any)=>{
-        console.log("Mensaje exitoso");
-      }, error:(e:any)=>{
-        console.log("Mensaje de error");
-      }
-    })
+saveProject(titulo: string, descripcion: string) {
+  this.apiS.getCounterProject().subscribe({
+    next: (data: any) => {
+      this.contador = data.countProject+1;
 
-    // localStorage.setItem("contadorP", this.contador.toString())
+      this.apiS.createProject(titulo, descripcion, this.userId).subscribe({
+        next: (data: any) => {
+          this.apiS.triggerRefresh();
+          console.log("Mensaje exitoso");
 
-    this.router.navigate(["/home"])
-  
-  }
+          // Guardar imágenes después de crear el proyecto
+          this.apiS.saveImages(this.contador, "proyecto", this.selectedFile).subscribe({
+            next: (data: any) => {
+              console.log("Imágenes guardadas correctamente");
+            },
+            error: (e: any) => {
+              console.log("Error al guardar imágenes");
+            }
+          });
 
-  probador(){
-    
-  }
+          // Redirige solo después de guardar todo
+          this.router.navigate(["/home"]);
+        },
+        error: (e: any) => {
+          console.log("Error al crear proyecto");
+        }
+      });
+    },
+    error: (e: any) => {
+      console.log("Error al obtener contador");
+    }
+  });
+}
+
 
   Comprobante(titulo:string, descripcion:string){
     if(this.id() == 0){
