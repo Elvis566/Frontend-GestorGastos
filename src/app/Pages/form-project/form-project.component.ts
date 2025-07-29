@@ -66,6 +66,7 @@ saveProject(titulo: string, descripcion: string) {
           this.apiS.saveImages(this.contador, "proyecto", this.selectedFile).subscribe({
             next: (data: any) => {
               console.log("Imágenes guardadas correctamente");
+              this.apiS.refresh$
             },
             error: (e: any) => {
               console.log("Error al guardar imágenes");
