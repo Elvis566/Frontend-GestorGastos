@@ -38,6 +38,7 @@ export class ListaPComponent {
         console.log(data.message);
 
       },error:(e:any)=>{
+        this.PROJECTS.set([])
         console.log("Error");
       }
     })
